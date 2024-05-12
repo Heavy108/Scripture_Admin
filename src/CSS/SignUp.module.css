@@ -1,0 +1,24 @@
+.Signupframe{
+    display: flex;
+    flex-direction: row;
+}
+
+.Signupframe img{
+    height: 45rem;
+    width: 150dvh;
+    /* filter: grayscale(); */
+}
+
+.Introduction{
+    align-content: center;
+    /* margin-left:-8rem */
+    
+}
+.form{
+    display: flex;
+    flex-direction: column;
+}
+.form label{
+    margin: 1rem 1rem 0.4rem 0rem;
+    font-size:1.3rem
+}
