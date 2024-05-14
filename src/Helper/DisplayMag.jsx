@@ -54,13 +54,7 @@ function Displaymag({ data }) {
       });
       const data = await res.json(); // Parse JSON response
 
-      if (data.success) {
-        console.log("success");
-        // window.location.reload();
-        router.push("/Home");
-      } // Reload the page
-      // router.push("/Home");
-      // router.back();
+      console.log({message:'success'})
     } catch (error) {
       console.log("failed", error.message);
     }

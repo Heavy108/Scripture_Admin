@@ -4,6 +4,7 @@ import Magazine from '@/Models/MagazineModel';
 
 export async function POST(request) {
     try {
+        await connect();
       const { id } = await request.json();
       await Magazine.findByIdAndDelete({_id:id})
   

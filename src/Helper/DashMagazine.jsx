@@ -80,7 +80,7 @@ function Dashmagazines() {
         formData.append("pdfadress", pdfFile, pdfFile.name);
       }
 
-      const res = await fetch("/api/", {
+      const res = await fetch("/api/MagazineInsert", {
         method: "POST",
         body: formData,
       });
