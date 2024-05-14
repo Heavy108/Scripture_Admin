@@ -21,7 +21,7 @@ export async function POST(request) {
     const text = data.get("text") || CarasoulItems.text;
     const address = data.get("address") || CarasoulItems.address;
     const bgColor = data.get("bg_color") || CarasoulItems.bgColor;
-
+console.log("near the update call")
     await Carasoul.findOneAndUpdate(
       { _id: id },
       {

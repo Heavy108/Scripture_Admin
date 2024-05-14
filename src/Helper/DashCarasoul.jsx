@@ -36,7 +36,6 @@ function DashCarasoul({ Data }) {
         method: "POST",
         body: formData,
       });
-      console.log("i am near the sucess");
       console.log("success");
     } catch (error) {
       console.log("failed", error.message);

@@ -1,7 +1,6 @@
 "use client";
 import style from "@/CSS/DashMagazine.module.css";
 import { useState } from "react";
-
 function Dashmagazines() {
   const [user, setUser] = useState({
     _id: "",
@@ -81,7 +80,7 @@ function Dashmagazines() {
         formData.append("pdfadress", pdfFile, pdfFile.name);
       }
 
-      const res = await fetch("/api/DashMagazine", {
+      const res = await fetch("/api/", {
         method: "POST",
         body: formData,
       });

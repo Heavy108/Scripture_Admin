@@ -1,15 +1,31 @@
 "use client";
 import style from "@/CSS/DashCarasoul.module.css";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import axios from "axios";
 function Displaymag({ data }) {
   const [editingItems, setEditingItems] = useState({});
-  const [imageFile, setImageFile] = useState(null);
-  const [pdfFile, setPdfFile] = useState(null);
+
+
+  const router = useRouter();
+
   const handleEditClick = (id) => {
+    console.log(id)
     setEditingItems((prevEditingItems) => ({
       ...prevEditingItems,
       [id]: true,
     }));
+  };
+  const handleClickDelete = async (id) => {
+    try {
+      console.log(id);
+      const res = await axios.post('/api/Delete', { id });
+      console.log('success', res.data);
+    } catch (error) {
+      console.log(error.message);
+    }finally{
+      router.push('/Magazine')
+    }
   };
 
   const handleInputChange = (id, field, value) => {
@@ -22,7 +38,7 @@ function Displaymag({ data }) {
       },
     }));
   };
-
+ 
   const handleSaveClick = async (id) => {
     try {
       const editedItem = editingItems[id];
@@ -32,11 +48,19 @@ function Displaymag({ data }) {
         formData.append(key, editedItem[key]);
       }
 
-      // const res = await fetch('/api/Displa', {
-      //   method: 'POST',
-      //   body: formData
-      // });
-      console.log("success");
+      const res = await fetch("/api/MagazineUpdate", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json(); // Parse JSON response
+
+      if (data.success) {
+        console.log("success");
+        // window.location.reload();
+        router.push("/Home");
+      } // Reload the page
+      // router.push("/Home");
+      // router.back();
     } catch (error) {
       console.log("failed", error.message);
     }
@@ -130,8 +154,8 @@ function Displaymag({ data }) {
           {/* <h4>{item._id}</h4> */}
           <h4>{item._id}</h4>
           <img src={`data:image/jpeg;base64,${item.image}`} alt={item.title} />
-         {/* <h4>{item.image}</h4> */}
-         
+          {/* <h4>{item.image}</h4> */}
+
           <h4>{item.field}</h4>
           <h4>{item.tags}</h4>
           {/* <h4>{item.Date}</h4> */}
@@ -141,8 +165,7 @@ function Displaymag({ data }) {
           {/* <h4>{item.pdfaddress}</h4> */}
           {/* <h4>{item.image}</h4> */}
           <button onClick={() => handleEditClick(item._id)}>Edit</button>
-          <button >Delete</button>
-
+          <button onClick={() => handleClickDelete(item._id)}>Delete</button>
         </>
       )}
     </div>
