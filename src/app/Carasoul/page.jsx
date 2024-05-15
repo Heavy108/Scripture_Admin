@@ -12,7 +12,7 @@ function CarasoulUpdate(){
     return(
         <>
         <div style={{display:"flex",flexDirection:"row"}}>
-        <DashBoard/>
+        {/* <DashBoard/> */}
         <div style={{flexDirection:"column" , overflow:"hidden"}}>
         <DashCarasoul Data={Data}/>
         </div>

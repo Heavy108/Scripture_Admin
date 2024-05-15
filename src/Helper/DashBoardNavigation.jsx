@@ -2,6 +2,12 @@
 import style from "@/CSS/DashBoard.module.css";
 import { useState } from 'react';
 // import {useRouter} from "next/navigation";
+import { MdDashboard } from "react-icons/md";
+import { BiSolidCarousel } from "react-icons/bi";
+import { HiUserGroup } from "react-icons/hi";
+import { RiSettings4Fill } from "react-icons/ri";
+import { IoLogOutOutline } from "react-icons/io5";
+import { TbHomeFilled } from "react-icons/tb";
 import Link from "next/link";
 
 
@@ -19,48 +25,49 @@ function DashBoard() {
     return (
       <>
       <div className={style.superContainer}>
-        <div className={style.Container}>
+        
           <ul className={style.items}>
+            <li>Scripture</li>
             <li
               onClick={() => handleClick('Home')}
               className={activeItem === 'Home' ? `${style.activeItem}` : ''}
             >
-            <Link href="/Home">Home</Link>
+            <Link href="/Home" className={style.Link}><TbHomeFilled className={style.icons}/>Dashboard</Link>
             </li>
             <li
               onClick={() => handleClick('Magazine')}
               className={activeItem === 'Magazine' ? `${style.activeItem}` : ''}
             >
-              <Link href="/Magazine">Magazine</Link>
+              <Link href="/Magazine" className={style.Link}><MdDashboard className={style.icons}/>Magazine</Link>
             </li>
             <li
               onClick={() => handleClick('Carasoul')}
               className={activeItem === 'Carasoul' ? `${style.activeItem}` : ''}
             >
-              <Link href="/Carasoul">CaraSoul</Link>
+              <Link href="/Carasoul" className={style.Link}><BiSolidCarousel className={style.icons}/>Carousel</Link>
             </li>
             <li
               onClick={() => handleClick('Email')}
               className={activeItem === 'Email' ? `${style.activeItem}` : ''}
             >
-             <Link href="/Mailer">Mailer</Link>
+             <Link href="/Mailer" className={style.Link}><HiUserGroup className={style.icons}/>Subscribers</Link>
             </li>
             <li
               onClick={() => handleClick('Accounts')}
               className={activeItem === 'Accounts' ? `${style.activeItem}` : ''}
             >
-            <Link href="/Accounts">Accounts</Link>
+            <Link href="/Accounts" className={style.Link}><RiSettings4Fill className={style.icons}/>Setting</Link>
             </li>
             <li
               onClick={() => handleClick('Logout')}
               className={activeItem === 'Logout' ? `${style.activeItem}` : ''}
             >
-              Logout
+              <Link href="#" className={style.Link}><IoLogOutOutline className={style.icons}/>Logout</Link>
             </li>
           </ul>
         </div>
 
-          </div>
+          
              
       </>
     )

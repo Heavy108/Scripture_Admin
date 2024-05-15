@@ -11,8 +11,9 @@ export async function fetchAccountData(){
         const Subscriber= await Newsletter.countDocuments();
         const Research =await Magazine.countDocuments({tags:'Research'})
         const events =await Magazine.countDocuments({tags:'events'})
+        const bytes =await Magazine.countDocuments({tags:'GDSC'})
         // console.log(events)
-        return [magazine,Subscriber,Research,events]
+        return [magazine,Subscriber,Research,events,bytes]
 
 
 

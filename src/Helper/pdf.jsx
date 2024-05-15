@@ -2,41 +2,30 @@
 import React from 'react';
 
 const ViewPDFButton = ({ pdfPath }) => {
-  const handleViewClick = () => {
-    const binaryData = atob(pdfPath);
-    const arrayBuffer = new ArrayBuffer(binaryData.length);
-    const uint8Array = new Uint8Array(arrayBuffer);
-    for (let i = 0; i < binaryData.length; i++) {
-      uint8Array[i] = binaryData.charCodeAt(i);
-    }
-    const blob = new Blob([arrayBuffer], { type: 'application/pdf' });
-    const url = URL.createObjectURL(blob);
-    window.open(url, '_blank');
-    URL.revokeObjectURL(url);
-  };
-
-  const handleDownloadClick = () => {
-    const binaryData = atob(pdfPath);
-    const arrayBuffer = new ArrayBuffer(binaryData.length);
-    const uint8Array = new Uint8Array(arrayBuffer);
-    for (let i = 0; i < binaryData.length; i++) {
-      uint8Array[i] = binaryData.charCodeAt(i);
-    }
-    const blob = new Blob([arrayBuffer], { type: 'application/pdf' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'document.pdf';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  };
+ 
+  const handleDownload = () => {
+    const pdfaddress ='/final.pdf'
+      const link = document.createElement("a");
+      link.href =  pdfaddress;
+      link.download = pdfaddress.split("/").pop();
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    };
 
   return (
     <>
-      <button onClick={handleViewClick}>View PDF</button>
-      <button onClick={handleDownloadClick}>Download PDF</button>
+      
+      <button onClick={handleDownload} style={{
+        backgroundColor:"black",
+        color:"white",
+        padding:"0.8rem 1.2rem 0.8rem 1.2rem",
+        height:"2.6rem",
+        borderRadius:"1rem",
+        
+
+
+      }}>Download</button>
     </>
   );
 };

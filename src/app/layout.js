@@ -1,3 +1,4 @@
+import DashboardLayout from "@/Helper/DashBoardLayout";
 import { Inter } from "next/font/google";
 import "./global.css";
 
@@ -11,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}><DashboardLayout>{children}</DashboardLayout></body>
     </html>
   );
 }

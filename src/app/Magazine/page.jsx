@@ -11,7 +11,7 @@ function Display(){
         {/* <DashBoard/> */}
         
         <div style={{display:"flex",flexDirection:"row"}}>
-        <DashBoard/>
+        {/* <DashBoard/> */}
         <div style={{flexDirection:"column" , overflow:"hidden"}}>
             <Link href='/MagazineInsert'><button>Add</button></Link>
         <Displaymag data={Data}/>

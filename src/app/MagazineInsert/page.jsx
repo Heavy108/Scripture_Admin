@@ -7,7 +7,7 @@ function MagazineUpdate() {
   return (
     <>
     <div style={{display:"flex",flexDirection:"row"}}>
-      <DashBoard />
+      {/* <DashBoard /> */}
       
       <Dashmagazines />
       </div>
