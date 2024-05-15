@@ -43,7 +43,7 @@ function DashBoard() {
               onClick={() => handleClick('Email')}
               className={activeItem === 'Email' ? `${style.activeItem}` : ''}
             >
-              Email
+             <Link href="/Mailer">Mailer</Link>
             </li>
             <li
               onClick={() => handleClick('Accounts')}
