@@ -3,7 +3,7 @@ import style from "../CSS/MagCluster.module.css";
 import React, { useState } from "react";
 import Pagination from "./Pagination";
 import Magazine from "../Helper/Magazine_Frame_1";
-
+import Newsletter from "./Newsletter";
 function Mag_Section({  Data, MagazinesPerPage}) {
   const [currentPage, setCurrentPage] = useState(1);
  
@@ -30,19 +30,20 @@ function Mag_Section({  Data, MagazinesPerPage}) {
   };
 
   return (
-    <div className={style.All_magazine}>
-    
-
+    // <div className={style.All_magazine}>
+    <>
       {MagazinesPerPage > 8 ? (
   records.map((items, index) => (
-    <Magazine
+    <Newsletter
       key={index}
-      {...items} // Passing all properties from 'items' as props
+      {...items}
+      val={index + 1}
+       // Passing all properties from 'items' as props
     />
   ))
 ) : (
   records.map((items, index) => (
-    <Magazine 
+    < Magazine
       key={index}
       {...items} 
     />
@@ -60,7 +61,9 @@ function Mag_Section({  Data, MagazinesPerPage}) {
         lastIndex={lastIndex}
         data={Data.length}
       />
-    </div>
+      </>
+
+    // </div>
   );
 }
 

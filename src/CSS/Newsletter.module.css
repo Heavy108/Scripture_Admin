@@ -1,0 +1,113 @@
+.container{
+    margin: 2rem;
+    position: relative;
+}
+.heading{
+    display:flex;
+    justify-content: space-between;
+    margin:0rem;
+
+}
+.heading p{
+font-size: 1.5rem;
+font-weight: 600;
+margin:0rem;
+}
+.button{
+    background-color: black;
+    color: white;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 0.8rem;
+}
+
+.headlist{
+    background-color: #f2f2f2;
+    
+    border-radius: 0.5rem;
+    list-style-type: none;
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.headlist li{
+    margin-right: 3rem;
+}
+
+.fields{
+    list-style-type: none;
+     display: flex; 
+font-size:12px;
+    font-weight: 500;
+    /* flex-wrap: nowrap;  */
+    justify-content: space-between;
+    margin:1rem;
+}
+.mail{
+    display :flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.label{
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.mail input{
+    border: 2px solid #d9d9d9;
+    padding: 1rem;
+    margin: 1rem 0rem 1rem 0rem;
+    border-radius: 1rem;
+}
+.input_field2{
+    height: 13rem;
+    border: 2px solid #d9d9d9;
+    padding: 1rem;
+    margin: 1rem 0rem 1rem 0rem;
+    border-radius: 1rem;
+}
+.modal {
+    position: fixed;
+    width: 30rem;
+    border: 1px solid black;
+    height: 35rem;
+    z-index: 99;
+    border-radius: 0.8rem;
+    margin: 0;
+    bottom: -40rem; /* Initially off-screen */
+    right: 2rem; /* Adjust as needed */
+    background-color: white;
+    animation: slideIn 2s ease-in-out forwards; /* Apply slide-in animation */
+  }
+  
+  .modalContent {
+    margin: 2rem;
+  }
+  
+  .close {
+    align-content: center;
+    color: red;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .modalhead p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+  }
+  
+  .modalhead {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  @keyframes slideIn {
+    from {
+      bottom: -40rem; /* Start off-screen */
+    }
+    to {
+      bottom: 2rem; /* Slide up to the desired position */
+    }
+  }

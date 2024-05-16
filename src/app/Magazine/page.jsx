@@ -44,7 +44,9 @@ function Display() {
             <CiSearch />
           </div>
         </div>
+        <div style={{display:"flex", flexWrap:"wrap"}}>
         <Mag_Section Data={Data} MagazinesPerPage={8}/>
+      </div>
       </div>
     </>
   );
