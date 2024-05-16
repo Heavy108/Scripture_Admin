@@ -9,12 +9,12 @@ const [magazine, subscriber, research, events, bytes] =
   await fetchAccountData();
 
 const Data = await fetchData();
+// console.log(Data)
 
 function Display() {
   return (
     <>
-      {/* <Link href='/MagazineInsert'><button>Add</button></Link>
-        <Displaymag data={Data}/> */}
+      
       <div className={style.Account}>
         <div className={style.heading}>
           <h4>Magazines</h4>
@@ -44,7 +44,7 @@ function Display() {
             <CiSearch />
           </div>
         </div>
-        {/* <Mag_Section Data={Data} MagazinesPerPage={8}/> */}
+        <Mag_Section Data={Data} MagazinesPerPage={8}/>
       </div>
     </>
   );

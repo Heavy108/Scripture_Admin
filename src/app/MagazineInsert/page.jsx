@@ -1,7 +1,6 @@
 import "../global.css";
 import Dashmagazines from "@/Helper/DashMagazine";
 
-import DashBoard from "@/Helper/DashBoardNavigation";
 
 function MagazineUpdate() {
   return (

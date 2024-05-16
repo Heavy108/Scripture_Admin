@@ -12,8 +12,8 @@ export async function fetchData() {
       return {
         ...obj,
         Date: obj.Date.toJSON(),
-        image:obj.image.toString('base64'),
-        pdfaddress:obj.pdfaddress.toString('base64')
+        // image:obj.image.toString('base64'),
+        // pdfaddress:obj.pdfaddress.toString('base64')
       };
     });
     // console.log(plainObjects)

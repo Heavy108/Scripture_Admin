@@ -104,14 +104,15 @@ function Dashmagazines() {
   return (
     <>
       <div className={style.formContainer}>
-        <form onSubmit={onSubmit}>
+        <p>Add Magazines</p>
+        <form onSubmit={onSubmit} className={style.form}>
           {/* <label htmlFor="_id" className={style.label}>
             _id
           </label>
-          <div className={style.input_container}>
+          <div >
             <input
               placeholder="Enter _id"
-              className={style.input_field}
+              
               id="_id"
               name="_id"
               onChange={handleInputChange}
@@ -122,10 +123,10 @@ function Dashmagazines() {
           <label htmlFor="field" className={style.label}>
             Field
           </label>
-          <div className={style.input_container}>
+          <div >
             <input
               placeholder="Enter Field"
-              className={style.input_field}
+              
               id="field"
               name="field"
               onChange={handleInputChange}
@@ -136,10 +137,10 @@ function Dashmagazines() {
           <label htmlFor="tags" className={style.label}>
             Tags
           </label>
-          <div className={style.input_container}>
+          <div >
             <input
               placeholder="Enter Tags"
-              className={style.input_field}
+              
               id="tags"
               name="tags"
               onChange={handleInputChange}
@@ -150,11 +151,13 @@ function Dashmagazines() {
           <label htmlFor="date" className={style.label}>
             Date
           </label>
-          <div className={style.input_container}>
+          <div >
             <input
+              style={{border:"2px solid #C0D3FA"}}
               type="date"
               id="date"
               name="Date"
+              placeholder="DD/MM/YYYY"
               onChange={handleInputChange}
               value={user.Date}
             />
@@ -163,10 +166,10 @@ function Dashmagazines() {
           <label htmlFor="title" className={style.label}>
             Title
           </label>
-          <div className={style.input_container}>
+          <div >
             <input
               placeholder="Enter Title"
-              className={style.input_field}
+              
               id="title"
               name="Title"
               onChange={handleInputChange}
@@ -177,10 +180,10 @@ function Dashmagazines() {
           <label htmlFor="description" className={style.label}>
             Description
           </label>
-          <div className={style.input_container}>
+          <div >
             <textarea
               placeholder="Enter Description"
-              className={style.input_field}
+              
               id="description"
               name="Description"
               onChange={handleInputChange}
@@ -191,10 +194,10 @@ function Dashmagazines() {
           <label htmlFor="image" className={style.label}>
             Image
           </label>
-          <div className={style.input_container}>
+          <div >
             <input
               type="file"
-              className={style.input_field}
+              className={style.input}
               id="image"
               name="image"
               onChange={handleInputChange}
@@ -204,10 +207,10 @@ function Dashmagazines() {
           <label htmlFor="para1" className={style.label}>
             Para1
           </label>
-          <div className={style.input_container}>
+          <div >
             <textarea
               placeholder="Enter Para1"
-              className={style.input_field}
+              
               id="para1"
               name="Para1"
               onChange={handleInputChange}
@@ -218,23 +221,27 @@ function Dashmagazines() {
           <label htmlFor="pdfadress" className={style.label}>
             PDF Address
           </label>
-          <div className={style.input_container}>
+          <div >
             <input
               type="file"
-              className={style.input_field}
+              className={style.input}
               id="pdfadress"
               name="pdfadress"
               onChange={handleInputChange}
             />
           </div>
-          <input
+         
+        </form>
+      </div>
+      <span className={style.submit}>
+      <button
             type="submit"
             value="submit"
             disabled={!isFormValid}
-          />
-        </form>
-      </div>
+          >Submit</button>
+    </span>
     </>
+
   );
 }
 
