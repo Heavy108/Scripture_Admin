@@ -1,9 +1,19 @@
 "use client";
 import style from "@/CSS/DashMagazine.module.css";
 import { useState } from "react";
+
+let uniqueIdCounter = 1;
+
+const generateUniqueId = () => {
+  const id = `SC${uniqueIdCounter.toString().padStart(3, '0')}`;
+  uniqueIdCounter++;
+  return id;
+};
+
+
 function Dashmagazines() {
   const [user, setUser] = useState({
-    _id: "",
+    _id: generateUniqueId(),
     field: "",
     tags: "",
     Date: "",
@@ -19,7 +29,7 @@ function Dashmagazines() {
 
   const isFormFilled = () => {
     const requiredFields = [
-      user._id,
+      // user._id,
       user.field,
       user.tags,
       user.Date,
@@ -65,7 +75,7 @@ function Dashmagazines() {
 
     try {
       const formData = new FormData();
-      formData.append("_id", user._id);
+      formData.append("_id",user._id)
       formData.append("field", user.field);
       formData.append("tags", user.tags);
       formData.append("Date", user.Date);
@@ -95,7 +105,7 @@ function Dashmagazines() {
     <>
       <div className={style.formContainer}>
         <form onSubmit={onSubmit}>
-          <label htmlFor="_id" className={style.label}>
+          {/* <label htmlFor="_id" className={style.label}>
             _id
           </label>
           <div className={style.input_container}>
@@ -107,7 +117,7 @@ function Dashmagazines() {
               onChange={handleInputChange}
               value={user._id}
             />
-          </div>
+          </div> */}
 
           <label htmlFor="field" className={style.label}>
             Field

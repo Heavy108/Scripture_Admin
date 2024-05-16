@@ -130,15 +130,7 @@ function Displaymag({ data }) {
               }
             />
 
-            {/* <input
-                type="text"
-                name="address"
-                value={editingItems[item._id]?.address || item.address}
-                onChange={(e) =>
-                  handleInputChange(item._id, "address", e.target.value)
-                }
-                
-              /> */}
+          
 
             <input type="submit" value="Submit" />
           </form>

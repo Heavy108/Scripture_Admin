@@ -32,7 +32,8 @@ gap: 1rem;
 }
 .data{
     font-weight: 700;
-    margin-top:0.5rem
+    margin-top:0.5rem;
+    color: black;
 }
 .guidelines{
     margin: 2rem;

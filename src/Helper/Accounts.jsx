@@ -1,19 +1,11 @@
 import style from '@/CSS/Accounts.module.css';
-import { fetchAccountData } from '@/app/api/Account/route';
 import ViewPDFButton from './pdf';
+
+import { fetchAccountData } from '@/app/api/Account/route';
 const [magazine, subscriber, research, events,bytes] =await fetchAccountData();
  
 function Accounts(){
-    const pdfaddress = '/final.pdf';
-  console.log(pdfaddress)
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = pdfaddress;
-    link.download = pdfaddress.split("/").pop();
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  
 return(
     <>
     <div className={style.container}>

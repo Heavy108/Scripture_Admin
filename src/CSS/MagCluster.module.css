@@ -1,0 +1,12 @@
+.All_magazine {
+  width: 100%;
+  display: flex;
+  /* margin: 7.5rem 10rem 7.5rem 10rem; */
+  /* height: fit-content; */
+  /* display: flex; */
+  flex-wrap: wrap;
+  
+}
+
+
+

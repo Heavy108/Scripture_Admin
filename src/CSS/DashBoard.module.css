@@ -27,7 +27,7 @@
     margin-bottom:4rem
 }
 .items li:last-child{
-    margin-top:12rem
+    margin-top:14rem
 }
 .activeItem{
     border: 1px solid black;
