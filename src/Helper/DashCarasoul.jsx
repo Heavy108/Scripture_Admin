@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef } from "react";
+import { useRouter } from "next/navigation";
 import style from "@/CSS/DashCarasoul.module.css";
 
 const DashCarasoul = ({ Data }) => {
@@ -7,6 +8,7 @@ const DashCarasoul = ({ Data }) => {
   const [originalData, setOriginalData] = useState({});
   const [selectedImage, setSelectedImage] = useState(null);
   const fileInputRef = useRef(null);
+  const router =useRouter();
 
   const handleEditClick = (id) => {
     setOriginalData((prevOriginalData) => ({
@@ -44,13 +46,15 @@ const DashCarasoul = ({ Data }) => {
         formData.append(key, editedItem[key]);
       }
       console.log("error for here");
-      const res = await fetch("/api/DashCarasoul", {
+      const res = await fetch("/api/CarasoulUpdate", {
         method: "POST",
         body: formData,
       });
       console.log("success");
     } catch (error) {
       console.log("failed", error.message);
+    }finally{
+      Router.push('/Dashboard/Carasoul')
     }
   };
 

@@ -27,7 +27,7 @@ function Magazine(props) {
     } catch (error) {
       console.log(error.message);
     } finally {
-      router.push("/Magazine");
+      router.push("/Dashboard/Magazine");
     }
   };
 
@@ -46,7 +46,7 @@ function Magazine(props) {
                 <div className={style.dropdownContent}>
                   <Link
                     href={{
-                      pathname: "/EditMagazine",
+                      pathname: "/Dashboard/EditMagazine",
                       query: { _id: props._id },
                     }}
                   >

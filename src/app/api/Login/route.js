@@ -20,14 +20,14 @@ export async function POST(request) {
 
     const userData = userDocSnap.data();
     console.log("User exists");
-    // console.log(userData);
+    
 
     const validPassword = await bcryptjs.compare(password, userData.password);
     if (!validPassword) {
       return NextResponse.json({ error: "Invalid password" }, { status: 400 });
     }
 
-    console.log(userData);
+    
     return NextResponse.json(
       { message: "User Login successfully" },
       { status: 200 }

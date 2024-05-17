@@ -7,12 +7,12 @@ export async function POST(request) {
   try {
     const reqBody = await request.json();
     const { username, password } = reqBody;
-    console.log(reqBody);
+    // console.log(reqBody);
 
     // Hash the password
     const salt = await bcryptjs.genSalt(10);
     const hashedPassword = await bcryptjs.hash(password, salt);
-    console.log(username, hashedPassword);
+    // console.log(username, hashedPassword);
 
     const userDocRef = doc(db, "Users", username);
 

@@ -5,8 +5,10 @@
     /* height:90vh; */
     
     }
-    .Account h4{
+    .p{
         font-size:1.5rem;
+        font-weight: 600;
+        margin: 0rem 0rem 1rem 0rem;
     }
     .items{
     list-style-type: none;
@@ -42,8 +44,10 @@
         justify-content: space-between;
         margin: 0rem;
     }
-    .heading h4{
+    .all{
     font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem 0rem 0rem 0rem;
     }
     .add{
         background-color: black;

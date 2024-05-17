@@ -32,31 +32,31 @@ function DashBoard() {
               onClick={() => handleClick('Home')}
               className={activeItem === 'Home' ? `${style.activeItem}` : ''}
             >
-            <Link href="/Home" className={style.Link}><TbHomeFilled className={style.icons}/>Dashboard</Link>
+            <Link href="/Dashboard/Home" className={style.Link}><TbHomeFilled className={style.icons}/>Dashboard</Link>
             </li>
             <li
               onClick={() => handleClick('Magazine')}
               className={activeItem === 'Magazine' ? `${style.activeItem}` : ''}
             >
-              <Link href="/Magazine" className={style.Link}><MdDashboard className={style.icons}/>Magazine</Link>
+              <Link href="/Dashboard/Magazine" className={style.Link}><MdDashboard className={style.icons}/>Magazine</Link>
             </li>
             <li
               onClick={() => handleClick('Carasoul')}
               className={activeItem === 'Carasoul' ? `${style.activeItem}` : ''}
             >
-              <Link href="/Carasoul" className={style.Link}><BiSolidCarousel className={style.icons}/>Carousel</Link>
+              <Link href="/Dashboard/Carasoul" className={style.Link}><BiSolidCarousel className={style.icons}/>Carousel</Link>
             </li>
             <li
               onClick={() => handleClick('Email')}
               className={activeItem === 'Email' ? `${style.activeItem}` : ''}
             >
-             <Link href="/Subscribers" className={style.Link}><HiUserGroup className={style.icons}/>Subscribers</Link>
+             <Link href="/Dashboard/Subscribers" className={style.Link}><HiUserGroup className={style.icons}/>Subscribers</Link>
             </li>
             <li
               onClick={() => handleClick('Accounts')}
               className={activeItem === 'Accounts' ? `${style.activeItem}` : ''}
             >
-            <Link href="/Accounts" className={style.Link}><RiSettings4Fill className={style.icons}/>Setting</Link>
+            <Link href="/Dashboard/Accounts" className={style.Link}><RiSettings4Fill className={style.icons}/>Setting</Link>
             </li>
             <li
               onClick={() => handleClick('Logout')}

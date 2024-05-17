@@ -1,5 +1,5 @@
 import EditForm from "@/Helper/EditForm";
-import { fetchformData } from "../api/Edit/route";
+import { fetchformData } from "@/app/api/Edit/route";
 
 const Data =await fetchformData();
 async function EditMagazine({searchParams}){

@@ -1,7 +1,6 @@
 import "../global.css";
 import DashCarasoul from "@/Helper/DashCarasoul";
-import { fetchCarasoulData } from "../api/Carasoul/route";
-import DashBoard from "@/Helper/DashBoardNavigation";
+import { fetchCarasoulData } from "@/app/api/Carasoul/route";
 
 
 const Data=await fetchCarasoulData()

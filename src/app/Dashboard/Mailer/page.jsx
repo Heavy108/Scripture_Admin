@@ -9,7 +9,7 @@ function Display() {
   const sendMail = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("/api/Mailer", {
+      const response = await fetch("/app/api/Mailer", {
         method: "POST",
         headers: {
           "content-type": "application/json",

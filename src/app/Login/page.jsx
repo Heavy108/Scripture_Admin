@@ -1,5 +1,5 @@
 "use client";
-import "../global.css"
+// import "../global.css"
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import axios from "axios";
@@ -21,7 +21,7 @@ function Login() {
       const response = await axios.post("/api/Login", user);
       console.log("Login success", response.data);
       
-      router.push("/DashHome");
+      router.push("/Dashboard/Home");
     } catch (error) {
       console.log("Login failed", error);
      
@@ -77,7 +77,6 @@ function Login() {
             >
               Login here
             </button>
-            <Link href="/Home" className={style.route}>Visit Home page</Link>
           </div>
         </div>
       </div>

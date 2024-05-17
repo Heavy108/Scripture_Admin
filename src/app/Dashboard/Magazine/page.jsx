@@ -1,4 +1,3 @@
-import Displaymag from "@/Helper/DisplayMag";
 import { fetchData } from "@/app/api/Magazine/route";
 import Link from "next/link";
 import style from "@/CSS/Display.module.css";
@@ -17,8 +16,8 @@ function Display() {
       
       <div className={style.Account}>
         <div className={style.heading}>
-          <h4>Magazines</h4>
-          <Link href="/MagazineInsert" className={style.link}>
+          <p className={style.p}>Magazines</p>
+          <Link href="/Dashboard/MagazineInsert" className={style.link}>
             <button className={style.add}>Add Magazines</button>
           </Link>
         </div>
@@ -38,7 +37,7 @@ function Display() {
         </ul>
 
         <div className={style.heading}>
-          <h4>All Magazines</h4>
+          <p className={style.all}>All Magazines</p>
           <div className={style.searchContainer}>
             <input type="search" placeholder="Search" />
             <CiSearch />
