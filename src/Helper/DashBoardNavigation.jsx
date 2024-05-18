@@ -1,7 +1,6 @@
 'use client'
 import style from "@/CSS/DashBoard.module.css";
 import { useState } from 'react';
-// import {useRouter} from "next/navigation";
 import { MdDashboard } from "react-icons/md";
 import { BiSolidCarousel } from "react-icons/bi";
 import { HiUserGroup } from "react-icons/hi";
@@ -10,14 +9,15 @@ import { IoLogOutOutline } from "react-icons/io5";
 import { TbHomeFilled } from "react-icons/tb";
 import Link from "next/link";
 import axios from 'axios';
+import { useRouter } from "next/navigation";
 
 
 function DashBoard() {
-  // const router =useRouter()
+  const router =useRouter()
     const [activeItem, setActiveItem] = useState(null);
     const logout = async () => {
       try {
-          await axios.get('/app/api/Logout')
+          await axios.get('/api/Logout')
         
           router.push('/Login')
       } catch (error) {
