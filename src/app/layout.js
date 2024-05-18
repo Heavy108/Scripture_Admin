@@ -9,11 +9,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className} 
-      style={{
-        margin:"0",
-        width:"100vw",
-        height:"100vh"
-      }}>
+     >
         {children}</body>
     </html>
   )
