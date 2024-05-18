@@ -16,7 +16,7 @@ function SignupPage() {
 
   const onSignup = async () => {
     try {
-      const response = await axios.post("/app/api/SignUp", user);
+      const response = await axios.post("/api/SignUp", user);
       console.log("Signup success", response.data);
       router.push("/Dashboard/SignUp");
     } catch (error) {

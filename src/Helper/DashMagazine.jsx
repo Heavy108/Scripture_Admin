@@ -25,34 +25,8 @@ function Dashmagazines() {
   });
   const [imageFile, setImageFile] = useState(null);
   const [pdfFile, setPdfFile] = useState(null);
-  const [isFormValid, setIsFormValid] = useState(false);
 
-  const isFormFilled = () => {
-    const requiredFields = [
-      // user._id,
-      user.field,
-      user.tags,
-      user.Date,
-      user.Title,
-      user.Description,
-      imageFile,
-      user.Para1,
-      pdfFile,
-    ];
   
-    return requiredFields.every((field) => {
-      if (field === null || field === undefined) {
-        return false; // Treat null/undefined as an empty field
-      }
-  
-      if (typeof field === "string") {
-        return field.trim() !== "";
-      }
-  
-      return true;
-    });
-  };
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
 
@@ -67,7 +41,7 @@ function Dashmagazines() {
       setUser({ ...user, [name]: value });
     }
 
-    setIsFormValid(isFormFilled());
+   
   };
 
   const onSubmit = async (e) => {
@@ -225,7 +199,7 @@ function Dashmagazines() {
       <button
             type="submit"
             value="submit"
-            disabled={!isFormValid}
+            onClick={onSubmit}
           >Submit</button>
     </span>
     </>
