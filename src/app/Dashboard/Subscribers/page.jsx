@@ -3,9 +3,9 @@ import { fetchSubscriberData } from "@/app/api/Newsletter/route";
 import Mag_Section from "@/Helper/MagCluster";
 import SubHeading from "@/Helper/SubHeading";
 
-const Data = await fetchSubscriberData();
 // console.log(Data)
-function Subscriber(){
+async function Subscriber(){
+    const Data = await fetchSubscriberData();
 
     return(
         <>

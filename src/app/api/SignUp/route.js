@@ -6,8 +6,10 @@ import bcryptjs from "bcryptjs";
 export async function POST(request) {
   try {
     const reqBody = await request.json();
-    const { username, password, usertype, Email } = reqBody;
     console.log(reqBody);
+    const { username, password, userType, email } = reqBody;
+    console.log(reqBody);
+
 
     // Hash the password
     const salt = await bcryptjs.genSalt(10);
@@ -18,11 +20,14 @@ export async function POST(request) {
     // Create the document reference
     const userDocRef = doc(db, "Users", username);
 
+
+
+    console.log("UserType:", username);
     await setDoc(userDocRef, {
       name: username,
       password: hashedPassword,
-      usertype: usertype,
-      Email: Email,
+      usertype: userType,
+      Email: email,
     });
 
     console.log("Document written with ID: ", username);

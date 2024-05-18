@@ -2,22 +2,19 @@ import "../global.css";
 import DashCarasoul from "@/Helper/DashCarasoul";
 import { fetchCarasoulData } from "@/app/api/Carasoul/route";
 
-
-const Data=await fetchCarasoulData()
 // const serializedData = Data.map((item) => item.toObject());
-function CarasoulUpdate(){
-    
+async function CarasoulUpdate() {
+    const Data = await fetchCarasoulData();
 
-    return(
-        <>
-        <div style={{display:"flex",flexDirection:"row"}}>
+  return (
+    <>
+      <div style={{ display: "flex", flexDirection: "row" }}>
         {/* <DashBoard/> */}
-        <div style={{flexDirection:"column" , overflow:"hidden"}}>
-        <DashCarasoul Data={Data}/>
+        <div style={{ flexDirection: "column", overflow: "hidden" }}>
+          <DashCarasoul Data={Data} />
         </div>
-        </div>
-        </>
-        
-    )
+      </div>
+    </>
+  );
 }
 export default CarasoulUpdate;

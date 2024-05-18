@@ -5,9 +5,11 @@ import { useState } from "react";
 function Display() {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const sendMail = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const response = await fetch("/app/api/Mailer", {
         method: "POST",
@@ -19,15 +21,21 @@ function Display() {
           message,
         }),
       });
-      console.log(await response.json());
+
+      const data = await response.json();
+      console.log(data);
+      // Clear the form upon successful submission
+      setSubject("");
+      setMessage("");
     } catch (error) {
       console.error("Mailer Failed", error.message);
+    } finally {
+      setLoading(false);
     }
   };
+
   return (
     <>
-      {/* <DashBoard/> */}
-
       <form onSubmit={sendMail}>
         <label htmlFor="Subject" className={style.label}>
           Subject
@@ -37,11 +45,10 @@ function Display() {
             placeholder="Enter Subject"
             className={style.input_field}
             value={subject}
-            onChange={(e) => {
-              setSubject(e.target.value);
-            }}
+            onChange={(e) => setSubject(e.target.value)}
             id="Subject"
             name="Subject"
+            disabled={loading}
           />
         </div>
 
@@ -55,12 +62,13 @@ function Display() {
             id="Message"
             name="Message"
             value={message}
-            onChange={(e) => {
-              setMessage(e.target.value);
-            }}
+            onChange={(e) => setMessage(e.target.value)}
+            disabled={loading}
           />
         </div>
-        <input type="submit" />
+        <button type="submit" disabled={loading}>
+          {loading ? "Sending..." : "Send"}
+        </button>
       </form>
     </>
   );

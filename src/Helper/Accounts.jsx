@@ -2,9 +2,9 @@ import style from '@/CSS/Accounts.module.css';
 import ViewPDFButton from './pdf';
 
 import { fetchAccountData } from '@/app/api/Account/route';
-const [magazine, subscriber, research, events,bytes] =await fetchAccountData();
  
-function Accounts(){
+async function Accounts(){
+const [magazine, subscriber, research, events,bytes] =await fetchAccountData();
   
 return(
     <>
@@ -22,8 +22,8 @@ return(
         <h4>Magazines</h4>
         <ul className={style.items}>
         <li className={style.box}>Bytes<span className={style.data}>{bytes}</span></li>
-        <li className={style.box}>SciTech<span className={style.data}>{subscriber}</span></li>
-        <li className={style.box}>Events<span className={style.data}> {research}</span></li>
+        <li className={style.box}>SciTech<span className={style.data}>{research}</span></li>
+        <li className={style.box}>Events<span className={style.data}> {events}</span></li>
         <li className={style.box}>Magazines Downloaded<span className={style.data}>99</span></li>
         </ul>
     </div>

@@ -50,7 +50,7 @@ export async function POST(request) {
         image:imageBuffer,
         Para1:Para1,
         // pdfaddress: pdfFileName ? `/pdf/${pdfFileName}` : null,
-        pdf:pdfBuffer
+        pdfaddress:pdfBuffer
       },
 
     );

@@ -11,7 +11,7 @@ const MagazineSchema = new mongoose.Schema({
   image: { type: Buffer, required: true },
   Para1 : String,
   // pdfaddress : String,
-  pdf: { type: Buffer, required: true },
+  pdfaddress: { type: Buffer, required: true },
 });
 
 // const Magazine = mongoose.models.Magazine ? mongoose.model.Magazine : mongoose.model("Magazine", MagazineSchema);

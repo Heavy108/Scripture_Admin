@@ -7,10 +7,11 @@ import Mag_Section from "@/Helper/MagCluster";
 const [magazine, subscriber, research, events, bytes] =
   await fetchAccountData();
 
-const Data = await fetchData();
+
 // console.log(Data)
 
-function Display() {
+async function Display() {
+  const Data = await fetchData();
   return (
     <>
       

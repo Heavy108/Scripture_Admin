@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 
 function Displaymag({ data }) {
   const [editingItems, setEditingItems] = useState({});
+  const [loadingItems, setLoadingItems] = useState({});
   const router = useRouter();
 
   const handleInputChange = (id, field, value) => {
@@ -18,7 +19,13 @@ function Displaymag({ data }) {
     }));
   };
 
-  const handleSaveClick = async (id) => {
+  const handleSaveClick = async (e, id) => {
+    e.preventDefault();
+    setLoadingItems((prevLoadingItems) => ({
+      ...prevLoadingItems,
+      [id]: true,
+    }));
+
     try {
       const editedItem = editingItems[id];
       console.log("Edited item:", editedItem);
@@ -36,6 +43,12 @@ function Displaymag({ data }) {
       console.log({ message: 'success' });
     } catch (error) {
       console.log("failed", error.message);
+    } finally {
+      setLoadingItems((prevLoadingItems) => ({
+        ...prevLoadingItems,
+        [id]: false,
+      }));
+      router.push('/Dashboard/Magazine')
     }
   };
 
@@ -43,7 +56,7 @@ function Displaymag({ data }) {
     <div key={item._id + index} className={style.table}>
       <div className={style.formContainer}>
         <p>Edit Magazine</p>
-        <form onSubmit={() => handleSaveClick(item._id)} className={style.form}>
+        <form onSubmit={(e) => handleSaveClick(e, item._id)} className={style.form}>
           <label htmlFor="field" className={style.label}>
             Field
           </label>
@@ -54,6 +67,7 @@ function Displaymag({ data }) {
               name="field"
               onChange={(e) => handleInputChange(item._id, "field", e.target.value)}
               value={editingItems[item._id]?.field || item.field}
+              disabled={loadingItems[item._id]}
             />
           </div>
 
@@ -67,6 +81,7 @@ function Displaymag({ data }) {
               name="tags"
               onChange={(e) => handleInputChange(item._id, "tags", e.target.value)}
               value={editingItems[item._id]?.tags || item.tags}
+              disabled={loadingItems[item._id]}
             />
           </div>
 
@@ -82,6 +97,7 @@ function Displaymag({ data }) {
               placeholder="DD/MM/YYYY"
               onChange={(e) => handleInputChange(item._id, "Date", e.target.value)}
               value={editingItems[item._id]?.Date || item.Date}
+              disabled={loadingItems[item._id]}
             />
           </div>
 
@@ -95,6 +111,7 @@ function Displaymag({ data }) {
               name="Title"
               onChange={(e) => handleInputChange(item._id, "Title", e.target.value)}
               value={editingItems[item._id]?.Title || item.Title}
+              disabled={loadingItems[item._id]}
             />
           </div>
 
@@ -108,6 +125,7 @@ function Displaymag({ data }) {
               name="Description"
               onChange={(e) => handleInputChange(item._id, "Description", e.target.value)}
               value={editingItems[item._id]?.Description || item.Description}
+              disabled={loadingItems[item._id]}
             />
           </div>
 
@@ -121,6 +139,7 @@ function Displaymag({ data }) {
               id="image"
               name="image"
               onChange={(e) => handleInputChange(item._id, "image", e.target.files[0])}
+              disabled={loadingItems[item._id]}
             />
           </div>
 
@@ -134,6 +153,7 @@ function Displaymag({ data }) {
               name="Para1"
               onChange={(e) => handleInputChange(item._id, "Para1", e.target.value)}
               value={editingItems[item._id]?.Para1 || item.Para1}
+              disabled={loadingItems[item._id]}
             />
           </div>
 
@@ -146,12 +166,15 @@ function Displaymag({ data }) {
               className={style.input}
               id="pdfadress"
               name="pdfadress"
-              onChange={(e) => handleInputChange(item._id, "pdfaddress", e.target.files[0])}
+              onChange={(e) => handleInputChange(item._id, "pdfadress", e.target.files[0])}
+              disabled={loadingItems[item._id]}
             />
           </div>
 
           <span className={style.submit}>
-            <input type="submit" value="Submit" />
+            <button type="submit" disabled={loadingItems[item._id]}>
+              {loadingItems[item._id] ? "Updating..." : "Submit"}
+            </button>
           </span>
         </form>
       </div>
