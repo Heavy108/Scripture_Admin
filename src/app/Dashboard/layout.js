@@ -13,11 +13,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}
-      style={{
-        margin:"0",
-        width:"100vw",
-        height:"100vh"
-      }}
+      // style={{
+      //   margin:"0",
+      //   width:"100vw",
+      //   height:"100vh"
+      // }}
       ><DashboardLayout>{children}</DashboardLayout></body>
     </html>
   );

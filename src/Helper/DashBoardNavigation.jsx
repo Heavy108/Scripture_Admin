@@ -9,11 +9,22 @@ import { RiSettings4Fill } from "react-icons/ri";
 import { IoLogOutOutline } from "react-icons/io5";
 import { TbHomeFilled } from "react-icons/tb";
 import Link from "next/link";
+import axios from 'axios';
 
 
 function DashBoard() {
   // const router =useRouter()
     const [activeItem, setActiveItem] = useState(null);
+    const logout = async () => {
+      try {
+          await axios.get('/app/api/Logout')
+        
+          router.push('/Login')
+      } catch (error) {
+          console.log(error.message);
+          
+      }
+  }
 
     const handleClick = (item) => {
       setActiveItem(item);
@@ -53,17 +64,15 @@ function DashBoard() {
              <Link href="/Dashboard/Subscribers" className={style.Link}><HiUserGroup className={style.icons}/>Subscribers</Link>
             </li>
             <li
-              onClick={() => handleClick('Accounts')}
-              className={activeItem === 'Accounts' ? `${style.activeItem}` : ''}
+              onClick={() => handleClick('SignUp')}
+              className={activeItem === 'SignUp' ? `${style.activeItem}` : ''}
             >
-            <Link href="/Dashboard/Accounts" className={style.Link}><RiSettings4Fill className={style.icons}/>Setting</Link>
+            <Link href="/Dashboard/SignUp" className={style.Link}><RiSettings4Fill className={style.icons}/>Setting</Link>
             </li>
-            <li
-              onClick={() => handleClick('Logout')}
-              className={activeItem === 'Logout' ? `${style.activeItem}` : ''}
-            >
-              <Link href="#" className={style.Link}><IoLogOutOutline className={style.icons}/>Logout</Link>
-            </li>
+            
+           
+              <button onClick={logout} className={style.Link}><IoLogOutOutline className={style.icons}/>Logout</button>
+            
           </ul>
         </div>
 

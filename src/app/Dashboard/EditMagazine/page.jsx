@@ -1,3 +1,4 @@
+import Displaymag from "@/Helper/DisplayMag";
 import EditForm from "@/Helper/EditForm";
 import { fetchformData } from "@/app/api/Edit/route";
 
@@ -8,7 +9,8 @@ async function EditMagazine({searchParams}){
     
     return(
         <>
-        {/* <EditForm data={Data}/> */}
+        <EditForm data={Data}/> 
+         {/* <Displaymag data={Data}/> */}
         </>
     )
 }

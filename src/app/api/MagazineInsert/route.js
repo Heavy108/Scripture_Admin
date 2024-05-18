@@ -11,7 +11,7 @@ export async function POST(request) {
 
     // Handle image file upload
     const imageFile = data.get('image');
-    let imageFileName;
+   
     if (imageFile) {
       const imageBytes = await imageFile.arrayBuffer();
       imageBuffer = Buffer.from(imageBytes);
@@ -20,7 +20,7 @@ export async function POST(request) {
 
     // Handle PDF file upload
     const pdfFile = data.get('pdfadress');
-    let pdfFileName;
+   
     if (pdfFile) {
       const pdfBytes = await pdfFile.arrayBuffer();
        pdfBuffer = Buffer.from(pdfBytes);

@@ -63,3 +63,9 @@ align-content: center;
 .dropdownContent li:last-child{
   margin-bottom: 0rem;
 }
+.link{
+  text-decoration: none;
+  color: black;
+  margin-bottom: 0.5rem;
+
+}

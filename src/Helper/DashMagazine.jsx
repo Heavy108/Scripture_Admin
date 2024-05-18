@@ -106,19 +106,7 @@ function Dashmagazines() {
       <div className={style.formContainer}>
         <p>Add Magazines</p>
         <form onSubmit={onSubmit} className={style.form}>
-          {/* <label htmlFor="_id" className={style.label}>
-            _id
-          </label>
-          <div >
-            <input
-              placeholder="Enter _id"
-              
-              id="_id"
-              name="_id"
-              onChange={handleInputChange}
-              value={user._id}
-            />
-          </div> */}
+          
 
           <label htmlFor="field" className={style.label}>
             Field

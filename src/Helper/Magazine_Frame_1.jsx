@@ -45,6 +45,7 @@ function Magazine(props) {
               {showMenu && (
                 <div className={style.dropdownContent}>
                   <Link
+                  className={style.link}
                     href={{
                       pathname: "/Dashboard/EditMagazine",
                       query: { _id: props._id },

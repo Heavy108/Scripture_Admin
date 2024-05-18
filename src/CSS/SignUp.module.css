@@ -1,24 +1,41 @@
 .Signupframe{
-    display: flex;
-    flex-direction: row;
+    margin: 2rem;
 }
-
-.Signupframe img{
-    height: 45rem;
-    width: 150dvh;
-    /* filter: grayscale(); */
+.head{
+    font-size:1.5rem;
+    font-weight: 600;
+    margin: 0;
 }
-
-.Introduction{
-    align-content: center;
-    /* margin-left:-8rem */
-    
+.Info{
+    font-size: 1rem;
+    color: #595959;
 }
 .form{
     display: flex;
     flex-direction: column;
 }
+.form input{
+    padding: 1rem;
+    width: 25rem;
+    border-radius: 1rem;
+    border:2px solid #d9d9d9;
+    margin: 1rem 0rem 1rem 0rem;
+}
 .form label{
-    margin: 1rem 1rem 0.4rem 0rem;
-    font-size:1.3rem
+    font-size: 0.9rem;
+    font-weight: 600;
+    
+}
+.opt{
+    padding: 1rem;
+    width: 27rem;
+    border-radius: 1rem;
+    border:2px solid #d9d9d9;
+    margin: 1rem 0rem 1rem 0rem;
+}
+.button{
+    background-color: black;
+    color: white;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    border-radius: 1rem;
 }
