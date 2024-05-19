@@ -40,7 +40,7 @@ function Login() {
         <h2>Welcome to Scripture</h2>
         <p>Please Sign-in to your account</p>
         <form className={style.form} onSubmit={onLogin}>
-          <h1>{loading ? "Processing..." : "Login"}</h1>
+          <h1> Login</h1>
           <hr />
           <label htmlFor="username" className={style.label}>UserName</label>
           <div className={style.input_container}>

@@ -70,9 +70,9 @@ function DashBoard() {
             <Link href="/Dashboard/SignUp" className={style.Link}><RiSettings4Fill className={style.icons}/>Setting</Link>
             </li>
             
-           
-              <button onClick={logout} className={style.Link}><IoLogOutOutline className={style.icons}/>Logout</button>
-            
+           <li>
+              <span onClick={logout} className={style.Link}><IoLogOutOutline className={style.icons}/>Logout</span>
+              </li>
           </ul>
         </div>
 

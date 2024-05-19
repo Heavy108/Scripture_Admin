@@ -95,7 +95,7 @@ const DashCarasoul = ({ Data }) => {
                     {selectedImage && (
                       <>
                         <img src={selectedImage} alt="Selected" style={{ maxWidth: "100%", maxHeight: "100%" }} />
-                        <span className={style.closeButton} onClick={() => handleClearClick(item._id)}>×</span>
+                        {/* <span className={style.closeButton} onClick={() => handleClearClick(item._id)}>×</span> */}
                       </>
                     )}
                     <input

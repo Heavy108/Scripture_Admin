@@ -13,7 +13,7 @@ export async function fetchAccountData() {
                 $facet: {
                     totalMagazines: [{ $count: "count" }],
                     researchMagazines: [{ $match: { tags: "Research" } }, { $count: "count" }],
-                    eventMagazines: [{ $match: { tags: "events" } }, { $count: "count" }],
+                    eventMagazines: [{ $match: { tags: "Events" } }, { $count: "count" }],
                     byteMagazines: [{ $match: { tags: "GDSC" } }, { $count: "count" }],
                     newsletterCounts: [
                         {
@@ -39,6 +39,6 @@ export async function fetchAccountData() {
         return [magazine, subscriber, research, events, bytes];
     } catch (error) {
         console.error({ success: false, message: error.message });
-        return NextResponse('Error Fetching Data', error.message);
+        return NextResponse.json('Error Fetching Data', error.message);
     }
 }

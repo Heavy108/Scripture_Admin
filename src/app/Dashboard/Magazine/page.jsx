@@ -27,10 +27,10 @@ async function Display() {
             Bytes<span className={style.data}>{bytes}</span>
           </li>
           <li className={style.box}>
-            SciTech<span className={style.data}>{subscriber}</span>
+            SciTech<span className={style.data}>{research}</span>
           </li>
           <li className={style.box}>
-            Events<span className={style.data}> {research}</span>
+            Events<span className={style.data}> {events}</span>
           </li>
           <li className={style.box}>
             Magazines Downloaded<span className={style.data}>99</span>
