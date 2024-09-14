@@ -1,3 +1,4 @@
+
 import style from "@/CSS/Newsletter.module.css";
 import { fetchSubscriberData } from "@/app/api/Newsletter/route";
 import Mag_Section from "@/Helper/MagCluster";

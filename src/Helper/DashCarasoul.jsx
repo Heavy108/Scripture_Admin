@@ -54,7 +54,7 @@ const DashCarasoul = ({ Data }) => {
     } catch (error) {
       console.log("failed", error.message);
     }finally{
-      Router.push('/Dashboard/Carasoul')
+      router.push('/Dashboard/Carasoul')
     }
   };
 

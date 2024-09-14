@@ -7,10 +7,8 @@ const MagazineSchema = new mongoose.Schema({
   Date: Date,
   Title: String,
   Description: String,
-  // image: String,
   image: { type: Buffer, required: true },
   Para1 : String,
-  // pdfaddress : String,
   pdfaddress: { type: Buffer, required: true },
 });
 

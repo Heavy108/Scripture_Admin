@@ -34,7 +34,11 @@ function Login() {
 
   return (
     <div className={style.LoginFrame}>
-      <img src="/Login.svg" className={style.LoginImage} alt="Login illustration" />
+      <img
+        src="/Login.svg"
+        className={style.LoginImage}
+        alt="Login illustration"
+      />
       <div className={style.FormContainer}>
         <h1>Scripture</h1>
         <h2>Welcome to Scripture</h2>
@@ -42,7 +46,9 @@ function Login() {
         <form className={style.form} onSubmit={onLogin}>
           <h1> Login</h1>
           <hr />
-          <label htmlFor="username" className={style.label}>UserName</label>
+          <label htmlFor="username" className={style.label}>
+            UserName
+          </label>
           <div className={style.input_container}>
             <input
               className={style.input}
@@ -54,7 +60,9 @@ function Login() {
               disabled={loading}
             />
           </div>
-          <label htmlFor="password" className={style.label}>Password</label>
+          <label htmlFor="password" className={style.label}>
+            Password
+          </label>
           <div className={style.input_container}>
             <input
               className={style.input}
